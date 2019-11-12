@@ -1,0 +1,9 @@
+version: '3'
+
+services:
+  user-service:
+    container_name: user-service
+    build: .
+    image: user-service:1.0
+    ports:
+      - "3000:3000"
