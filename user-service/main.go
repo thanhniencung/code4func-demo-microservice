@@ -53,21 +53,11 @@ func healthcheck(c echo.Context) error {
 }
 
 func UserInfo(c echo.Context) error {
-	client := resty.New()
-
-	add, _ := LookupServiceWithConsul("order-service")
-	res, _ := client.R().
-		Get(fmt.Sprintf("%s%s", add, "/order/my-order"))
-
-	fmt.Println("===========")
-	fmt.Println(fmt.Sprintf("%s%s", add, "/order/my-order"))
-	fmt.Println(res)
-	fmt.Println("===========")
-
 	return c.JSON(http.StatusOK, echo.Map{
 		"userId":  "123456",
 		"fullName": "Ryan Nguyen",
-		"email": "ryan@gmail.com",
+		"avatar": "https://genknews.genkcdn.vn/2018/8/23/anh-0-1535019031645146400508.jpg",
+		"email": "code4func@gmail.com",
 	})
 }
 

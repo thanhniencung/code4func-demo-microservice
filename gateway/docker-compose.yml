@@ -90,9 +90,3 @@ services:
       - kong-net
     volumes:
       - kong_data:/var/lib/postgresql/data
-
-  konga:
-    image: pantsel/konga
-    environment:
-      NODE_ENV: production
-      TOKEN_SECRET: 992927e5b1c8a237875c70a302a34e22
